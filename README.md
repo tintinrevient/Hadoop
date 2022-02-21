@@ -12,7 +12,7 @@ and everywhere that Mary went
 the lamb was sure to go
 ```
 
-2. Execute the following statements in the Spark shell:
+2. Execute the following command:
 ```bash
 hadoop jar /usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.3.1.jar wordcount file:///home/shu/input file:///home/shu/output
 
