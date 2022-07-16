@@ -116,7 +116,19 @@ public class WordCount {
 }
 ```
 
-## Test
+## Installation
+
+1. Update `.bash_profile`:
+```bash
+export HADOOP_HOME=/home/user/hadoop-3.3.1
+export HADOOP_MAPRED_HOME=$HADOOP_HOME
+export PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin
+````
+
+2. Update the configurations in `etc/hadoop` with [core-site.xml](config/core-site.xml), [hdfs-site.xml](config/hdfs-site.xml), [mapred-site.xml](config/mapred-site.xml), [yarn-site.xml](config/yarn-site.xml) and [hadoop-env.sh](config/hadoop-env.sh).
+
+
+3. Test whether `yarn` or `local` mapreduce example works:
 
 ```bash
 hadoop jar $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.3.1.jar pi 2 10
