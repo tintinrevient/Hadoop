@@ -116,5 +116,88 @@ public class WordCount {
 }
 ```
 
+## Test
+
+```bash
+hadoop jar $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.3.1.jar pi 2 10
+
+2022-07-16 03:32:42,191 INFO input.FileInputFormat: Total input files to process : 2
+2022-07-16 03:32:42,239 INFO mapreduce.JobSubmitter: number of splits:2
+2022-07-16 03:32:42,398 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1657935129711_0001
+2022-07-16 03:32:42,398 INFO mapreduce.JobSubmitter: Executing with tokens: []
+2022-07-16 03:32:42,585 INFO conf.Configuration: resource-types.xml not found
+2022-07-16 03:32:42,585 INFO resource.ResourceUtils: Unable to find 'resource-types.xml'.
+2022-07-16 03:32:43,055 INFO impl.YarnClientImpl: Submitted application application_1657935129711_0001
+2022-07-16 03:32:43,112 INFO mapreduce.Job: The url to track the job: http://nezumikozo.local:8088/proxy/application_1657935129711_0001/
+2022-07-16 03:32:43,113 INFO mapreduce.Job: Running job: job_1657935129711_0001
+2022-07-16 03:32:52,320 INFO mapreduce.Job: Job job_1657935129711_0001 running in uber mode : false
+2022-07-16 03:32:52,321 INFO mapreduce.Job:  map 0% reduce 0%
+2022-07-16 03:32:59,473 INFO mapreduce.Job:  map 100% reduce 0%
+2022-07-16 03:33:05,532 INFO mapreduce.Job:  map 100% reduce 100%
+2022-07-16 03:33:05,545 INFO mapreduce.Job: Job job_1657935129711_0001 completed successfully
+2022-07-16 03:33:05,663 INFO mapreduce.Job: Counters: 50
+	File System Counters
+		FILE: Number of bytes read=50
+		FILE: Number of bytes written=819918
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=532
+		HDFS: Number of bytes written=215
+		HDFS: Number of read operations=13
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=3
+		HDFS: Number of bytes read erasure-coded=0
+	Job Counters
+		Launched map tasks=2
+		Launched reduce tasks=1
+		Data-local map tasks=2
+		Total time spent by all maps in occupied slots (ms)=10948
+		Total time spent by all reduces in occupied slots (ms)=3075
+		Total time spent by all map tasks (ms)=10948
+		Total time spent by all reduce tasks (ms)=3075
+		Total vcore-milliseconds taken by all map tasks=10948
+		Total vcore-milliseconds taken by all reduce tasks=3075
+		Total megabyte-milliseconds taken by all map tasks=11210752
+		Total megabyte-milliseconds taken by all reduce tasks=3148800
+	Map-Reduce Framework
+		Map input records=2
+		Map output records=4
+		Map output bytes=36
+		Map output materialized bytes=56
+		Input split bytes=296
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=2
+		Reduce shuffle bytes=56
+		Reduce input records=4
+		Reduce output records=0
+		Spilled Records=8
+		Shuffled Maps =2
+		Failed Shuffles=0
+		Merged Map outputs=2
+		GC time elapsed (ms)=227
+		CPU time spent (ms)=0
+		Physical memory (bytes) snapshot=0
+		Virtual memory (bytes) snapshot=0
+		Total committed heap usage (bytes)=772276224
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters
+		Bytes Read=236
+	File Output Format Counters
+		Bytes Written=97
+Job Finished in 24.013 seconds
+Estimated value of Pi is 3.80000000000000000000
+```
+
 ## References
 * https://hadoop.apache.org/docs/r3.3.1/hadoop-project-dist/hadoop-common/SingleCluster.html
+* https://stackoverflow.com/questions/36843680/resources-are-low-on-nn-after-deactivation-of-safemode-and-added-space
+* https://stackoverflow.com/questions/54801232/hdfs-dfs-name-dir-is-out-of-free-space
+* https://stackoverflow.com/questions/29131449/why-does-hadoop-report-unhealthy-node-local-dirs-and-log-dirs-are-bad
